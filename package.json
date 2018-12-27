@@ -1,0 +1,19 @@
+{
+  "name": "interview-codding",
+  "version": "1.0.0",
+  "description": "ComparaOnline Software Engineer Test",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/daniduarte/interview-codding.git"
+  },
+  "author": "Dani Duarte <hola@daniduarte.cl>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/daniduarte/interview-codding/issues"
+  },
+  "homepage": "https://github.com/daniduarte/interview-codding#readme"
+}
