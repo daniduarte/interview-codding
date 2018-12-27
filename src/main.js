@@ -21,8 +21,6 @@ const productPrinter = function (product) {
 
 console.log('OMGHAI!');
 
-
-
 for (let i = 0; i <= 30; i += 1) {
   console.log(`-------- day ${i} --------`);
   console.log('name, sellIn, price');
