@@ -57,7 +57,7 @@ describe('Helpers', function () {
 
 describe('Classes validations', function () {
 
-  let productName = 'Producto';
+  let productName = 'Medium Coverage';
   let productSellIn = 10;
   let productPrice = 100;
   let product = new Product(productName, 10, 100);
