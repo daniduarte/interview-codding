@@ -83,3 +83,45 @@ describe('Classes validations', function () {
   })
 });
 
+describe('Coverage tests', function () {
+
+  const carInsurance = new CarInsurance;
+  carInsurance.addProduct(new Product('Medium Coverage', 10, 20));
+  carInsurance.addProduct(new Product('Full Coverage', 2, 0));
+  carInsurance.addProduct(new Product('Low Coverage', 5, 7));
+  carInsurance.addProduct(new Product('Mega Coverage', 0, 80));
+  carInsurance.addProduct(new Product('Special Full Coverage', 15, 20));
+  carInsurance.addProduct(new Product('Super Sale', 3, 6));
+
+  describe('From day zero', function() {
+    carInsurance.updatePrice();
+    carInsurance.getProducts().map(function(product) {
+      it(`Should ${product.getName()}`, function(){
+        let valid;
+        switch (product.getName()) {
+          case 'Medium Coverage':
+            valid = 19;
+            break;
+          case 'Full Coverage':
+            valid = 1;
+            break;
+          case 'Low Coverage':
+            valid = 6;
+            break;
+          case 'Mega Coverage':
+            valid = 80;
+            break;
+          case 'Special Full Coverage':
+            valid = 21;
+            break;
+          case 'Super Sale':
+            valid = 5;
+            break;
+        }
+        assert.equal(product.getPrice(), valid);
+      });
+    });
+  });
+});
+
+
