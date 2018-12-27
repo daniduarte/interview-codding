@@ -5,6 +5,56 @@ const assert = chai.assert;
 const Product = require('../src/classes/Product');
 const CarInsurance = require('../src/classes/CarInsurance');
 
+const increaseByOne = require('../src/helpers/increaseByOne');
+const increaseByTwo = require('../src/helpers/increaseByTwo');
+const increaseByThree = require('../src/helpers/increaseByThree');
+const decreaseByOne = require('../src/helpers/decreaseByOne');
+const decreaseByTwo = require('../src/helpers/decreaseByTwo');
+const decreaseByThree = require('../src/helpers/decreaseByThree');
+const getMaxPriceVerified = require('../src/helpers/getMaxPriceVerified');
+
+
+describe('Helpers', function () {
+  let initialValue = 10;
+
+  describe('increaseByOne', function () {
+    it ('Should increase by one', function () {
+      assert.equal(increaseByOne(initialValue), initialValue + 1);
+    });
+  });
+
+  describe('increaseByTwo', function () {
+    it ('Should increase by two', function () {
+      assert.equal(increaseByTwo(initialValue), initialValue + 2);
+    });
+  });
+
+  describe('increaseByThree', function () {
+    it ('Should increase by three', function () {
+      assert.equal(increaseByThree(initialValue), initialValue + 3);
+    });
+  });
+
+  describe('decreaseByOne', function () {
+    it ('Should decrease by one', function () {
+      assert.equal(decreaseByOne(initialValue), initialValue - 1);
+    });
+  });
+
+  describe('decreaseByTwo', function () {
+    it ('Should decrease by two', function () {
+      assert.equal(decreaseByTwo(initialValue), initialValue - 2);
+    });
+  });
+
+  describe('decreaseByThree', function () {
+    it ('Should decrease by three', function () {
+      assert.equal(decreaseByThree(initialValue), initialValue - 3);
+    });
+  });
+});
+
+
 describe('Classes validations', function () {
 
   let productName = 'Producto';
