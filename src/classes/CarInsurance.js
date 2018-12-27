@@ -187,6 +187,14 @@ function CarInsurance () {
    * TODO: Logic must be defined by requierements list, by the way it returns same values
    */
   function _lowCoverage (sellIn, price) {
+    if (sellIn <= 0) {
+      price = 0
+    } else {
+      price = decreaseByOne(price);
+    }
+
+    sellIn = decreaseByOne(sellIn);
+
     return [sellIn, price];
   }
 
