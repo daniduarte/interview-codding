@@ -1,5 +1,13 @@
 'use strict';
 
+const increaseByOne = require('../helpers/increaseByOne');
+const increaseByTwo = require('../helpers/increaseByTwo');
+const increaseByThree = require('../helpers/increaseByThree');
+const decreaseByOne = require('../helpers/decreaseByOne');
+const decreaseByTwo = require('../helpers/decreaseByTwo');
+const decreaseByThree = require('../helpers/decreaseByThree');
+const getMaxPriceVerified = require('../helpers/getMaxPriceVerified');
+
 function CarInsurance () {
 
   /*
@@ -108,15 +116,15 @@ function CarInsurance () {
   function _fullCoverage (sellIn, price) {
     if (price <= 50) {
       if (price == 0 || price == 1) {
-        price = _increaseByOne(price);
+        price = increaseByOne(price);
       } else {
-        price = _increaseByTwo(price);
+        price = increaseByTwo(price);
       }
 
-      price = _getMaxPriceVerified(price);
+      price = getMaxPriceVerified(price);
     }
 
-    sellIn = _decreaseByOne(sellIn);
+    sellIn = decreaseByOne(sellIn);
 
     return [sellIn, price];
   }
@@ -138,17 +146,17 @@ function CarInsurance () {
       if (sellIn <= 0) {
         price = 0;
       } else if (sellIn <= 5) {
-        price = _increaseByThree(price);
+        price = increaseByThree(price);
       } else if (sellIn >= 6 && sellIn <= 10) {
-        price = _increaseByTwo(price);
+        price = increaseByTwo(price);
       } else {
-        price = _increaseByOne(price);
+        price = increaseByOne(price);
       }
 
-      price = _getMaxPriceVerified(price);
+      price = getMaxPriceVerified(price);
     }
 
-    sellIn = _decreaseByOne(sellIn);
+    sellIn = decreaseByOne(sellIn);
 
     return [sellIn, price];
   }
@@ -158,12 +166,12 @@ function CarInsurance () {
    */
   function _superSaleCoverage (sellIn, price) {
     if (price >= 1) {
-      price = _decreaseByOne(price);
+      price = decreaseByOne(price);
     } else {
       price = 0;
     }
 
-    sellIn = _decreaseByOne(sellIn);
+    sellIn = decreaseByOne(sellIn);
 
     return [sellIn, price];
   }
@@ -180,43 +188,6 @@ function CarInsurance () {
    */
   function _lowCoverage (sellIn, price) {
     return [sellIn, price];
-  }
-
-  /*
-   * ---------------------
-   * Helpers
-   * ---------------------
-   */
-
-  function _getMaxPriceVerified (price) {
-    if (price > 50) {
-      return 50
-    }
-    return price;
-  }
-
-  function _increaseByOne (value) {
-    return value + 1;
-  }
-
-  function _increaseByTwo (value) {
-    return value + 2;
-  }
-
-  function _increaseByThree (value) {
-    return value + 3;
-  }
-
-  function _decreaseByOne (value) {
-    return value - 1;
-  }
-
-  function _decreaseByTwo (value) {
-    return value - 2;
-  }
-
-  function _decreaseByThree (value) {
-    return value - 3;
   }
 
 }
