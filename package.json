@@ -4,7 +4,8 @@
   "description": "ComparaOnline Software Engineer Test",
   "main": "src/main.js",
   "scripts": {
-    "test": "mocha spec/main.js"
+    "test": "mocha spec/main.js",
+    "after-30-days": "node src/main.js" 
   },
   "repository": {
     "type": "git",
