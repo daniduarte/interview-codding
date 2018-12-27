@@ -3,6 +3,7 @@
 const chai = require('chai');
 const assert = chai.assert;
 const Product = require('../src/classes/Product');
+const CarInsurance = require('../src/classes/CarInsurance');
 
 describe('Classes validations', function () {
 
