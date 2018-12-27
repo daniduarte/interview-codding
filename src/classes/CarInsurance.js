@@ -62,7 +62,7 @@ function CarInsurance () {
       switch(coverage.getName()) {
 
         case 'Medium Coverage':
-          _newCoverage = _megaCoverage(coverage.getSellIn(), coverage.getPrice());
+          _newCoverage = _mediumCoverage(coverage.getSellIn(), coverage.getPrice());
           coverage.setSellIn(_newCoverage[0]);
           coverage.setPrice(_newCoverage[1]);
           break;
@@ -180,6 +180,18 @@ function CarInsurance () {
    * TODO: Logic must be defined by requierements list, by the way it returns same values
    */
   function _mediumCoverage (sellIn, price) {
+    if (price > 0) {
+      if (sellIn <= 0) {
+        price = decreaseByTwo(price)
+      } else {
+        price = decreaseByOne(price);
+      }
+    } else {
+      price = 0;
+    }
+
+    sellIn = decreaseByOne(sellIn);
+
     return [sellIn, price];
   }
 
