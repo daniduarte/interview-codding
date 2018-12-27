@@ -3,17 +3,19 @@
 function Product (name, sellIn, price) {
 
   /*
-   * --------------------------------
-   * Public scope
-   * --------------------------------
+   * Public exposed methods
    */
-
-  // Public exposed methods
+ 
   this.getName = _getName;
   this.getSellIn = _getSellIn;
   this.getPrice = _getPrice;
+  this.setSellIn = _setSellIn;
+  this.setPrice = _setPrice
 
-  // Private attributes
+  /*
+   * Private attributes
+   */
+
   let _name = null;
   let _sellIn = null;
   let _price = null;
