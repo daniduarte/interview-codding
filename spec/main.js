@@ -10,7 +10,7 @@ describe('Classes validations', function () {
   let productName = 'Producto';
   let productSellIn = 10;
   let productPrice = 100;
-  let product = new Product(productName, 10, 100);;
+  let product = new Product(productName, 10, 100);
 
   describe('Person', function () {
 
